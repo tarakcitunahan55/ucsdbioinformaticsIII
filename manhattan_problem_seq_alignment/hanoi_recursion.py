@@ -24,7 +24,7 @@ So the pattern is: every recursive call eventually bottoms out at a base case, a
      """
 
     # move_count lets us track total moves across all recursive calls.
-    # We use a list (mutable) instead of an int (immutable) -> immutable problem in recursion (normally would work fine in non-recursion) since each recursive call gets its own private copy of move_count (starting fresh at whatever value was passed in). When that nested call increments it, that increment only exists inside that call's own local scope
+    # We use a list (mutable) instead of an int (immutable) -> immutable is problem in recursion (normally would work fine in non-recursion) since each recursive call gets its own private copy of move_count (starting fresh at whatever value was passed in). When that nested call increments it, that increment only exists inside that call's own local scope
     if move_count is None:
         move_count = [0]
 
