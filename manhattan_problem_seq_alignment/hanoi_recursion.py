@@ -57,7 +57,6 @@ So the pattern is: every recursive call eventually bottoms out at a base case, a
     return move_count[0]
 
 
-# ---- Example usage ----
 if __name__ == "__main__":
     num_disks = 4
     print(f"Solving Tower of Hanoi for {num_disks} disks (peg 1 -> peg 3):\n")
