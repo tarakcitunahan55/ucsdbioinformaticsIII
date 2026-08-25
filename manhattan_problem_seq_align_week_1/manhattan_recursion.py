@@ -37,7 +37,6 @@ def south_or_east(i, j, down, right):
     return max(x, y)
 
 
-# ---- Example usage ----
 if __name__ == "__main__":
     # A small 2x2 example grid (3 rows x 3 cols of nodes, i.e. n=2, m=2).
     # down[i][j]  = weight of vertical edge landing on (i,j)

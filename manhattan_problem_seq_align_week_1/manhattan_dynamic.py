@@ -77,7 +77,6 @@ def parse_input(text):
     return n, m, down, right
 
 
-# ---- Example usage with the sample input ----
 if __name__ == "__main__":
     sample_input = """18 16
 1 1 0 3 1 2 1 2 0 0 2 2 2 4 3 4 4

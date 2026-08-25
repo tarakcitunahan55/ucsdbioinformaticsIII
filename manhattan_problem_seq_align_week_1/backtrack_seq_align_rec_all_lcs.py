@@ -64,21 +64,21 @@ def all_lcs(backtrack, v, i, j, memo=None):
     if memo is None:
         memo = {}
 
-    if i == 0 or j == 0:
+    if i == 0 or j == 0: #Base case: hit the edge of the table, nothing left to build with — return a set containing just the empty string (not an empty set — empty string is needed so merging/adding works correctly one level up).
         return {""}
 
-    if (i, j) in memo:
-        return memo[(i, j)]
+    if (i, j) in memo: #If we've already solved "all LCSs reachable from (i,j)" before, reuse it instantly instead of recomputing.
+        return memo[(i, j)] #dictionary access using a tuple as the key.
 
     results = set()
 
     for direction in backtrack[i][j]:
-        if direction == "down":
-            results |= all_lcs(backtrack, v, i - 1, j, memo)
+        if direction == "down": #down/right → recurse and merge in the whole set of strings unchanged (no character consumed).
+            results |= all_lcs(backtrack, v, i - 1, j, memo) # (|=) Union merges two sets without deleting what's already there or use results.update(any iterable)
         elif direction == "right":
             results |= all_lcs(backtrack, v, i, j - 1, memo)
-        else:  # "diag"
-            for suffix in all_lcs(backtrack, v, i - 1, j - 1, memo):
+        else:  # "diag" 
+            for suffix in all_lcs(backtrack, v, i - 1, j - 1, memo): #diag → recurse to (i-1, j-1), and for every string that comes back, append v[i-1] (the matched character) before adding it in.
                 results.add(suffix + v[i - 1])
 
     memo[(i, j)] = results

@@ -44,6 +44,16 @@ def lcs_backtrack(v, w):
                 s[i - 1][j - 1] + match
             )
 
+            # Tie-break order is down -> right -> diag, so "diag" is only chosen
+            # when it's the strict unique max. Since s[i-1][j] and s[i][j-1] are
+            # both >= s[i-1][j-1] (monotonicity), a non-match (match=0) can never
+            # make diag the strict winner -- so diag is only ever picked on an
+            # actual character match. On matches that tie with down/right, this
+            # code favors down/right, meaning some valid matches get skipped in
+            # the reconstruction. LCS length is unaffected either way; only the
+            # particular LCS string returned (of possibly several optimal ones)
+            # can differ.
+
             if s[i][j] == s[i - 1][j]:
                 backtrack[i][j] = "down"
             elif s[i][j] == s[i][j - 1]:
