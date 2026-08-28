@@ -30,8 +30,8 @@ def build_score_table(v, w, match_reward, mismatch_penalty, indel_penalty):
     score = [[0] * (m + 1) for _ in range(n + 1)]
     backtrack = [[[] for _ in range(m + 1)] for _ in range(n + 1)]
 
-    # the first row and column have nowhere to backtrack to, so every
-    # cell along them is simply treated as a starting point
+    # the first row and column (index zero) have nowhere to backtrack to, so every cell along them is simply treated as a starting point
+    #Since indel penalties only ever subtract from the score, dragging in leading gaps to reach row 0 or column 0 can never beat just starting fresh with a score of zero — so every cell in 1st row/column (index zero) there is always a valid "start," and score zero, never a forced gap step.
     for i in range(n + 1):
         backtrack[i][0] = ["start"]
     for j in range(m + 1):
