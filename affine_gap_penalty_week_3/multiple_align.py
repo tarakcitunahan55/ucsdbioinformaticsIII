@@ -1,7 +1,7 @@
 """
 Solve the multiple longest common subsequence for three strings.
 
-the score of a column in a multiple alignment is defined as:
+the score of a column in a multiple global alignment is defined as:
     1  if all three symbols in that column are identical
     0  if at least one symbol disagrees (including a symbol being a gap (indel))
 
