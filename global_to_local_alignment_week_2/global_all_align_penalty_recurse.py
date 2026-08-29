@@ -6,6 +6,8 @@ Given a match reward, a mismatch penalty, an indel penalty, and two
 strings, this builds a scoring table using dynamic programming, then
 uses memoized recursion to explore every tied optimal direction and
 collect every distinct alignment that reaches the best score.
+
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

@@ -8,6 +8,8 @@ uses memoized recursion to explore every tied optimal direction --
 including every tied place an alignment could end and every tied
 place one could start -- and collects every distinct alignment that
 reaches the best score.
+
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

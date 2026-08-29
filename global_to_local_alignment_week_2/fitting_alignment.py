@@ -13,6 +13,7 @@ matrix, which gives an amino-acid-pair-specific reward or penalty
 instead of a single flat match reward and mismatch penalty.
 
 Caveat: if there are multiple best alignments, it returns only one.
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

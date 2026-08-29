@@ -8,6 +8,8 @@ every tied direction at every cell (instead of picking one), finds
 every column where the best score could end (instead of picking the
 first one), and then uses memoized recursion to explore every
 combination of ties and collect every distinct resulting alignment.
+
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

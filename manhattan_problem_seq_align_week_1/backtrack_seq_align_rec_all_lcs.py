@@ -1,6 +1,8 @@
 """ Given two DNA strings use dynamic programming to the find the longest common subsequence(s) (LCS).
 Memoization to get the output.
-If there are multiple LCSs, it returns all"""
+If there are multiple LCSs, it returns all
+No penalty for gaps and mismatches (since indels would occur heavily we can get very long but biologically not meaningful matches)
+"""
 
 def lcs_backtrack_all(v, w):
     """

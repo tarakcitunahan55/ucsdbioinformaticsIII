@@ -14,6 +14,7 @@ of extending a poor one.
 
 Caveat: if there are multiple best local alignments, this returns
 only one.
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

@@ -12,6 +12,8 @@ combination of ties and collect every distinct resulting alignment.
 Scoring for matches and mismatches uses the blosum62 substitution
 matrix, which gives an amino-acid-pair-specific reward or penalty
 instead of a single flat match reward and mismatch penalty.
+
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

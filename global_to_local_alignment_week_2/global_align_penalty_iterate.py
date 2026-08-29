@@ -5,6 +5,7 @@ strings, this builds a scoring table using dynamic programming, then
 walks the table backwards "iteratively "to recover one alignment that achieves the
 best possible score.
 Caveat: if there are multiple best alignments, it returns only one.
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 

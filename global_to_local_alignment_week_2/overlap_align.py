@@ -10,6 +10,7 @@ trimmed, but only at its end (since w' is a prefix, it must start
 right at the beginning of w).
 
 Caveat: if there are multiple best overlap alignments, this returns only one of them.
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys

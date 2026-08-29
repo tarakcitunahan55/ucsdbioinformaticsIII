@@ -7,7 +7,7 @@ same three moves (down, right, diagonal) are available at every cell,
 but instead of maximizing a reward/match, this minimizes a cost, where a
 mismatch costs one edit, a match costs nothing, and every gap
 (insertion or deletion) costs one edit as well.
-
+No affine gap penalties (opening and extending the gap/indels get the same penalty)
 """
 
 import sys
